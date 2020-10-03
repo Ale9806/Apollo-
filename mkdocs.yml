@@ -1,1 +1,7 @@
-site_name: My Docs
+site_name: Apollo
+theme:
+  name: material
+  palette:
+    scheme: default
+
+
