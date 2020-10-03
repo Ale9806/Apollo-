@@ -7,9 +7,12 @@ nav:
     - tutorial3: example3.md
     - tutorial4: example4.md
     - tutorial5: example5.md
+  - "Add your Tutorial": add.md
 theme:
   name: material
   palette:
     scheme: default
+
+repo_url: https://github.com/Ale9806/Apollo-
 
 
