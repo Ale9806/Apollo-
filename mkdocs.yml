@@ -1,4 +1,12 @@
 site_name: Apollo
+nav:
+  - Home: index.md
+  - Tutorials:
+    - tutorial1: example1.md
+    - tutorial2: example2.md
+    - tutorial3: example3.md
+    - tutorial4: example4.md
+    - tutorial5: example5.md
 theme:
   name: material
   palette:
