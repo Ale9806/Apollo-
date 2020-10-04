@@ -8,7 +8,7 @@
       
       
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../images/apollo3.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
     
     
@@ -157,10 +157,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Tutorials
@@ -178,17 +180,36 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Add your Tutorial" class="md-nav__link md-nav__link--active">
+      Add your Tutorial
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
-    <label class="md-nav__link" for="nav-2-1">
+    <label class="md-nav__link" for="nav-2-2">
       Math
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Math" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-1">
+      <label class="md-nav__title" for="nav-2-2">
         <span class="md-nav__icon md-icon"></span>
         Math
       </label>
@@ -230,8 +251,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../example2/" title="tutorial2" class="md-nav__link">
-      tutorial2
+    <a href="../Set_Theory/" title="Set_Theory" class="md-nav__link">
+      Set_Theory
     </a>
   </li>
 
@@ -242,57 +263,14 @@
 
 
   <li class="md-nav__item">
-    <a href="../example3/" title="tutorial3" class="md-nav__link">
-      tutorial3
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../example4/" title="tutorial4" class="md-nav__link">
-      tutorial4
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../example5/" title="tutorial5" class="md-nav__link">
-      tutorial5
+    <a href="../Python/" title="Python" class="md-nav__link">
+      Python
     </a>
   </li>
 
         
       </ul>
     </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Add your Tutorial" class="md-nav__link md-nav__link--active">
-      Add your Tutorial
-    </a>
-    
   </li>
 
     
@@ -372,6 +350,13 @@
       const promise = auth.signInWithEmailAndPassword(email.value,password.value);
       promise.catch(e => alert(e.message));
       alert("Logged In as: " + email.value);
+      alert("Your tutioral is being processed"); 
+
+      // Empty values once the tutioral has been upload 
+      document.getElementById("txtEmail").value      = "";
+      document.getElementById("txtPassword").value   = "";
+      document.getElementById("tutorialtitle").value = "";
+      document.getElementById("tutorialtext").value  = "";
 
 
       var database = firebase.database();
@@ -407,7 +392,7 @@
 
 <button onclick="singUp()" id="btnLogin"    style="
  background-color: #401F9F;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block font-size: 16px;"> Sing Up </button>
-<p id="Form"> Hi </p>
+<p id="Form"> Apollo has full suport of <a href="https://en.wikipedia.org/wiki/Markdown" target="_bkank"> Markdown </a> </p>
 
 </div>
 
@@ -418,7 +403,7 @@
 <div>
 
 <textarea id="tutorialtitle" name="tutorialtitle" rows="1" cols="100">
-Add your Title Here!
+Add your Title Here, keep it short (2-6 words)
 </textarea>
 </div>
 
@@ -429,7 +414,7 @@ Add your Title Here!
 <div>
 
 <textarea id="tutorialtext" name="tutorialtext" rows="20" cols="100">
-Add your tutorial here!
+Add your tutorial here, you can use  Markdown  syntax!
 </textarea>
 </div>
                 
@@ -450,7 +435,7 @@ Add your tutorial here!
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../example5/" title="tutorial5" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -459,11 +444,25 @@ Add your tutorial here!
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                tutorial5
+                Home
               </div>
             </div>
           </a>
         
+        
+          <a href="../example1/" title="Math Tutorial" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Math Tutorial
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
