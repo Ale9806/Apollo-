@@ -2,7 +2,9 @@ site_name: Apollo
 nav:
   - Home: index.md
   - Tutorials:
-    - tutorial1: example1.md
+    - Math:
+      - "Math Tutorial": example1.md
+      - Example: Jupyter//MathTutorial.ipynb
     - tutorial2: example2.md
     - tutorial3: example3.md
     - tutorial4: example4.md
@@ -13,6 +15,8 @@ theme:
   palette:
     scheme: default
 
+plugins:
+    - mkdocs-jupyter
 repo_url: https://github.com/Ale9806/Apollo-
 
 
