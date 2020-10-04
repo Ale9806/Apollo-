@@ -1,14 +1,8 @@
-
-
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
-
-
 <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
-
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-analytics.js"></script>
 
 <script>
@@ -23,11 +17,12 @@
     messagingSenderId: "544817195656",
     appId: "1:544817195656:web:735acb42a3cfcbee6a0d3d",
     measurementId: "G-HFZHHRFKJ9"
-  };
+                      };
+
   // Initialize Firebase
+
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-
   const auth = firebase.auth();
 
   function singUp(){
@@ -45,16 +40,31 @@
       var email    = document.getElementById("txtEmail");
       var password = document.getElementById("txtPassword");
 
+      var title    = document.getElementById("tutorialtitle");
+      var text     = document.getElementById("tutorialtext");    
+
+      var title_value = title.value;
+      var text_value = text.value;
+   
+
       const promise = auth.signInWithEmailAndPassword(email.value,password.value);
       promise.catch(e => alert(e.message));
-
       alert("Logged In as: " + email.value);
+
+
+      var database = firebase.database();
+      firebase.database().ref('user/').child("Tutorial").set({
+                         email: email,
+                         title: title_value,
+                         text:  text_value,
+                         });
+
 
   }
 
   auth.onAuthStateChanged(function(user){
       if(user){
-      document.getElementById("Form").innerHTML = 5 + 6;
+ 
 
       }else{
           alert("No active User")
@@ -64,12 +74,18 @@
   });
 </script>
 
+
+
+
+
+
+<!--  HTML STARTS HERE  -->
 <div> 
 
 <input  id="txtEmail"    type="email"     placeholder="Email"  style="border-style: outset;">
 <input  id="txtPassword" type="password"  placeholder="Password">
 
-<button onclick="Login()" id="btnLogin"    style="background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block font-size: 16px;"> Log in  </button>
+<button onclick="Login()" id="btnLogin"    style="background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block font-size: 16px;"> Submit </button>
 
 <button onclick="singUp()" id="btnLogin"    style="
  background-color: #401F9F;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block font-size: 16px;"> Sing Up </button>
