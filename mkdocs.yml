@@ -7,13 +7,11 @@ nav:
     - Example: Jupyter//MathTutorial.ipynb
   - Set_Theory: Set_Theory.md
   - Python: Python.md
-
+  - Car_tutorial: Car_tutorial.md
 plugins:
 - mkdocs-jupyter
-
 repo_url: https://github.com/Ale9806/Apollo-
 site_name: Apollo
-
 theme:
   favicon: images\apollo3.png
   name: material
