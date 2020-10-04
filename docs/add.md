@@ -50,6 +50,13 @@
       const promise = auth.signInWithEmailAndPassword(email.value,password.value);
       promise.catch(e => alert(e.message));
       alert("Logged In as: " + email.value);
+      alert("Your tutioral is being processed"); 
+      
+      // Empty values once the tutioral has been upload 
+      document.getElementById("txtEmail").value      = "";
+      document.getElementById("txtPassword").value   = "";
+      document.getElementById("tutorialtitle").value = "";
+      document.getElementById("tutorialtext").value  = "";
 
 
       var database = firebase.database();
@@ -89,7 +96,7 @@
 
 <button onclick="singUp()" id="btnLogin"    style="
  background-color: #401F9F;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block font-size: 16px;"> Sing Up </button>
-<p id="Form"> Hi </p>
+<p id="Form"> Apollo has full suport of <a href="https://en.wikipedia.org/wiki/Markdown" target="_bkank"> Markdown </a> </p>
 
 </div>
 
@@ -101,7 +108,7 @@
 
 
 <textarea id="tutorialtitle" name="tutorialtitle" rows="1" cols="100">
-Add your Title Here!
+Add your Title Here, keep it short (2-6 words)
 </textarea>
 </div>
 
@@ -113,6 +120,6 @@ Add your Title Here!
 
 
 <textarea id="tutorialtext" name="tutorialtext" rows="20" cols="100">
-Add your tutorial here!
+Add your tutorial here, you can use  Markdown  syntax!
 </textarea>
 </div>

@@ -1,22 +1,21 @@
-site_name: Apollo
 nav:
-  - Home: index.md
-  - Tutorials:
-    - Math:
-      - "Math Tutorial": example1.md
-      - Example: Jupyter//MathTutorial.ipynb
-    - tutorial2: example2.md
-    - tutorial3: example3.md
-    - tutorial4: example4.md
-    - tutorial5: example5.md
-  - "Add your Tutorial": add.md
+- Home: index.md
+- Tutorials:
+  - Add your Tutorial: add.md
+  - Math:
+    - Math Tutorial: example1.md
+    - Example: Jupyter//MathTutorial.ipynb
+  - Set_Theory: Set_Theory.md
+  - Python: Python.md
+
+plugins:
+- mkdocs-jupyter
+
+repo_url: https://github.com/Ale9806/Apollo-
+site_name: Apollo
+
 theme:
+  favicon: images\apollo3.png
   name: material
   palette:
     scheme: default
-
-plugins:
-    - mkdocs-jupyter
-repo_url: https://github.com/Ale9806/Apollo-
-
-
